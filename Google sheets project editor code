@@ -1,0 +1,19 @@
+function doGet(e) {
+
+  var sheet = SpreadsheetApp.openById("1NGEGnFUzzy3yqQS0o8HD2bv7mkbjrdQWiVcVyIPz_gA").getSheetByName("Sheet1");
+
+  var event = e.parameter.event;
+  var distance = Number(e.parameter.distance);
+
+  if (!event || distance <= 0) {
+    return ContentService.createTextOutput("Ignored");
+  }
+
+  var now = new Date();
+  var date = Utilities.formatDate(now, Session.getScriptTimeZone(), "dd/MM/yyyy");
+  var time = Utilities.formatDate(now, Session.getScriptTimeZone(), "HH:mm:ss");
+
+  sheet.appendRow([date, time, event, distance]);
+
+  return ContentService.createTextOutput("OK");
+}
