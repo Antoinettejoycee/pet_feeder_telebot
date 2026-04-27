@@ -1,0 +1,1 @@
+Smart IoT Pet Feeder that uses an ultrasonic sensor to detect a pet and automatically dispense food with a stepper motor. It logs feeding data to Google Sheets and sends real-time alerts via Telegram. Built for fast response, reliability, and easy demonstration.
